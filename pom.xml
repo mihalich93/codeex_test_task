@@ -11,43 +11,52 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <selenide.version>5.0.1</selenide.version>
+        <junit.api.version>5.3.2</junit.api.version>
+        <junit.platform.version>1.5.2</junit.platform.version>
+        <assertj.version>3.22.0</assertj.version>
+        <allure.maven.plugin.version>2.10.0</allure.maven.plugin.version>
+        <allure.report.version>2.13.1</allure.report.version>
+        <javafaker.version>1.0.2</javafaker.version>
+        <surefire.version>2.22.2</surefire.version>
+        <aspectj.version>1.9.4</aspectj.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>5.0.1</version>
+            <version>${selenide.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.3.2</version>
+            <version>${junit.api.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.3.2</version>
+            <version>${junit.api.version}</version>
         </dependency>
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-commons</artifactId>
-            <version>1.5.2</version>
+            <version>${junit.platform.version}</version>
         </dependency>
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.22.0</version>
+            <version>${assertj.version}</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
             <artifactId>allure-junit5</artifactId>
-            <version>2.13.1</version>
+            <version>${allure.report.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.javafaker</groupId>
             <artifactId>javafaker</artifactId>
-            <version>1.0.2</version>
+            <version>${javafaker.version}</version>
         </dependency>
     </dependencies>
 
@@ -56,31 +65,29 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.22.2</version>
+                <version>${surefire.version}</version>
                 <configuration>
                     <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.9.4/aspectjweaver-1.9.4.jar"
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
                     </argLine>
                     <systemPropertyVariables>
                         <allure.results.directory>${project.build.directory}/allure-results</allure.results.directory>
-                        <allure.link.custom.pattern>https://github.com/vinogradoff/allure-maven-junit5-example/{}
-                        </allure.link.custom.pattern>
                     </systemPropertyVariables>
                 </configuration>
                 <dependencies>
                     <dependency>
                         <groupId>org.aspectj</groupId>
                         <artifactId>aspectjweaver</artifactId>
-                        <version>1.9.4</version>
+                        <version>${aspectj.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>io.qameta.allure</groupId>
                 <artifactId>allure-maven</artifactId>
-                <version>2.10.0</version>
+                <version>${allure.maven.plugin.version}</version>
                 <configuration>
-                    <reportVersion>2.13.1</reportVersion>
+                    <reportVersion>${allure.report.version}</reportVersion>
                 </configuration>
             </plugin>
         </plugins>
