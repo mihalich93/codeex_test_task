@@ -12,7 +12,7 @@ public class Config {
     private static final Properties properties = new Properties();
 
     private static final String browser = System.getProperty("browser", "chrome");
-    private static final String browserVersion = System.getProperty("browserVersion");
+    private static final String driverVersion = System.getProperty("driverVersion");
 
     private static final String baseUrl;
     private static final String email;
@@ -45,8 +45,8 @@ public class Config {
                 manager = WebDriverManager.chromedriver();
                 break;
         }
-        if (browserVersion != null) {
-            manager.version(browserVersion);
+        if (driverVersion != null) {
+            manager.version(driverVersion);
         }
 
         manager.setup();

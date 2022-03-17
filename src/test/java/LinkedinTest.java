@@ -65,7 +65,7 @@ public class LinkedinTest extends BaseTest {
                 .sendKeysToPasswordInput(Config.getPassword())
                 .clickSubmitButton();
 
-        checkCurrentUrlStartsWith(Config.getBaseUrl() + "checkpoint/challenge/");
+        checkCurrentUrlStartsWith(Config.getBaseUrl() + "checkpoint/");
     }
 
     @TestId("4")

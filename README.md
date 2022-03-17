@@ -101,8 +101,8 @@ mvn clean test -Dbrowser=firefox -DdriverVersion="0.30.0" -DpropFile=default-con
 
 ### Allure
 
-Allure results are generated automatically during execution and stored in the target/allure-results folder. One can open
-the resulting report using the following command:
+Allure results are generated automatically during tests execution and stored in the target/allure-results folder. One
+can open the resulting report using the following command:
 
 ```console
 allure serve target/allure-results
