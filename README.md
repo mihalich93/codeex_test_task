@@ -69,6 +69,14 @@
 > Separate window with "Google Accounts" is opened.
 ---
 
+# Tools and libraries used:
+
+* Selenide - UI Automation library
+* JUnit 5 - Test runner
+* Assertj - Assertions library
+* Allure - test reporting tools
+* Faker - test data generation library
+
 # Prerequisites for running tests
 
 * Java 1.8
