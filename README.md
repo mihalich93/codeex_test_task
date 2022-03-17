@@ -74,8 +74,8 @@
 * Selenide - UI Automation library
 * JUnit 5 - Test runner
 * Assertj - Assertions library
-* Allure - test reporting tools
-* Faker - test data generation library
+* Allure - Test reporting tool
+* Faker - Test data generation library
 
 # Prerequisites for running tests
 
