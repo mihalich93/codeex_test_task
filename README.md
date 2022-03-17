@@ -4,7 +4,7 @@
 
 1. Open Linkedin "Home" page
 
-> "Join now" and "Sign Up" buttons are expected to be displayed
+> "Join now" and "Sign Up" buttons are expected to be displayed.
 
 2. Click the "Sign Up" button
 
@@ -15,58 +15,58 @@
 
 1. Open Linkedin "Login" page
 
-> Login form with unfilled email, password fields and "Submit" button should be visible
+> Login form with unfilled email, password fields and "Submit" button should be visible.
 
 2. Click "Submit" button
 
-> Error message for email field appears, stating that email field cannot be empty
-> No error message for password field presented
+> Error message for email field appears, stating that email field cannot be empty.
+> No error message for password field presented.
 
 3. Type a valid email to the username field
 4. Click "Submit" button
 
-> Error message for password field appears, stating that password field cannot be empty
-> No error message for email field presented
+> Error message for password field appears, stating that password field cannot be empty.
+> No error message for email field presented.
 ---
 
 #### [3] Check user is redirected to the checkpoint page after login with valid credentials
 
 1. Open Linkedin "Home" page
 
-> Login form should be displayed on the page
+> Login form should be displayed on the page.
 
 2. Fill in valid email and password of the already registered user
 3. Click "Submit" button
 
-> User is redirected to the checkpoint page
+> User is redirected to the checkpoint page.
 ---
 
 #### [4] Check joining via "Main" page sign-up form
 
 1. Open Linkedin "Main" page
 
-> Join form with "Phone or Email", "Password" fields and "Agree & Join" button is displayed
+> Join form with "Phone or Email", "Password" fields and "Agree & Join" button is displayed.
 
 2. Fill in "Phone or Email" and "Password" fields with valid email and password
 3. Click "Agree & Join" button
 
-> "First name", "Last name" fields and "Continue" button appear in the sign-up form
+> "First name", "Last name" fields and "Continue" button appear in the sign-up form.
 
 4. Fill in "First name" and "Last name" fields with valid data
 5. Click "Continue" button
 
-> "Challenge" dialog appears
+> "Challenge" dialog appears.
 ---
 
 #### [5] Check Google auth window appears on attempt to join with Google account
 
 1. Open Linkedin "Main" page
 
-> Join form with "Join with Google" button is displayed
+> Join form with "Join with Google" button is displayed.
 
 2. Click "Join with Google" button
 
-> Separate window with "Google Accounts" is opened
+> Separate window with "Google Accounts" is opened.
 ---
 
 # Prerequisites for running tests
@@ -89,7 +89,7 @@ Options available:
 * `-Dbrowser` (e.g. -Dbrowser=firefox) to specify browser, defaults to chrome. Supported browsers: chrome, firefox,
   edge, opera.
 * `-DdriverVersion` to specify desired webdriver version, defaults to the latest available for the chosen browser.
-* `-DpropFile` to specify config.properties file from the java/resources directory to be used, defaults to '
+* `-DpropFile` to specify config.properties file from the `main/resources` directory to be used, defaults to '
   default-config'
 
 So to run tests in firefox using gecko driver 0.30.0 with config from the default-config.properties file activated one
