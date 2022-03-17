@@ -1,3 +1,4 @@
+import annotations.TestId;
 import base.BaseTest;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
@@ -19,6 +20,7 @@ public class LinkedinTest extends BaseTest {
     private final LinkedinHomePage linkedinHomePage = new LinkedinHomePage();
     private final LinkedinMainPage linkedinMainPage = new LinkedinMainPage();
 
+    @TestId("1")
     @Test
     @DisplayName("Check navigation from home page to login page")
     public void checkNavigationToLoginPageFromHomePageTest() {
@@ -31,6 +33,7 @@ public class LinkedinTest extends BaseTest {
                 .checkLoginFormVisible();
     }
 
+    @TestId("2")
     @Test
     @DisplayName("Check error messages appear on attempt to login with unfilled credentials")
     public void checkErrorMessagesAppearOnAttemptToLoginWithUnfilledCredentialsTest() {
@@ -51,6 +54,7 @@ public class LinkedinTest extends BaseTest {
                 .checkErrorForPasswordVisible();
     }
 
+    @TestId("3")
     @Test
     @DisplayName("Check user is redirected to checkpoint page after login with valid credentials")
     public void checkUserIsRedirectedToCheckpointPageAfterLoginWithValidCredentials() {
@@ -64,17 +68,18 @@ public class LinkedinTest extends BaseTest {
         checkCurrentUrlStartsWith(Config.getBaseUrl() + "checkpoint/challenge/");
     }
 
+    @TestId("4")
     @Test
-    @DisplayName("Check joining via main page")
-    public void checkJoiningViaMainPageTest() {
+    @DisplayName("Check joining via main page sign up form")
+    public void checkJoiningViaMainPageSignUpFormTest() {
         linkedinMainPage
                 .open()
                 .checkJoinFormVisible()
                 .checkPhoneOrEmailInputVisible()
                 .checkPasswordInputVisible()
-                .sendKeysToPhoneOrEmailInput(faker.phoneNumber().cellPhone())
-                .sendKeysToPasswordInput(faker.internet().password())
                 .checkAgreeAndJoinButtonVisible()
+                .sendKeysToPhoneOrEmailInput(faker.internet().emailAddress())
+                .sendKeysToPasswordInput(faker.internet().password())
                 .clickAgreeAndJoinButton()
                 .checkFirstNameInputVisible()
                 .checkLastNameInputVisible()
@@ -85,6 +90,7 @@ public class LinkedinTest extends BaseTest {
                 .checkChallengeDialogVisible();
     }
 
+    @TestId("5")
     @Test
     @DisplayName("Check Google auth window appears on attempt to join with Google account")
     public void checkGoogleAuthWindowAppearsOnAttemptToJoinWithGoogleAccount() {

@@ -11,9 +11,10 @@ public abstract class BaseTest {
     protected static final Faker faker = new Faker();
 
     static {
+        Config.configureDriverManager();
         Configuration.browser = Config.getBrowser();
-        Configuration.startMaximized = true;
         Configuration.baseUrl = Config.getBaseUrl();
+        Configuration.startMaximized = true;
     }
 
     @AfterEach
